@@ -78,7 +78,7 @@ static const uint8_t num_DSM_channels = 6; //If using DSM RX, change this to mat
   MPU6050 mpu6050;
 #elif defined USE_MPU9250_SPI
   #include "src/MPU9250/MPU9250.h"
-  MPU9250 mpu9250(SPI2,36);
+  MPU9250 mpu9250(SPI,10);
 #else
   #error No MPU defined... 
 #endif
@@ -395,7 +395,7 @@ void loop() {
   loopBlink(); //Indicate we are in main loop with short blink every 1.5 seconds
 
   //Print data at 100hz (uncomment one at a time for troubleshooting) - SELECT ONE:
-  printRadioData();     //Prints radio pwm values (expected: 1000 to 2000)
+  //printRadioData();     //Prints radio pwm values (expected: 1000 to 2000)
   //printDesiredState();  //Prints desired vehicle state commanded in either degrees or deg/sec (expected: +/- maxAXIS for roll, pitch, yaw; 0 to 1 for throttle)
   //printGyroData();      //Prints filtered gyro data direct from IMU (expected: ~ -250 to 250, 0 at rest)
   //printAccelData();     //Prints filtered accelerometer data direct from IMU (expected: ~ -2 to 2; x,y 0 when level, z 1 when level)
