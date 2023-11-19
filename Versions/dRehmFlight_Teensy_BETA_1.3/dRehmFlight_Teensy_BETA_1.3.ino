@@ -160,20 +160,20 @@ float B_gyro = 0.1;       //Gyro LP filter paramter, (MPU6050 default: 0.1. MPU9
 float B_mag = 1.0;        //Magnetometer LP filter parameter
 
 //Magnetometer calibration parameters - if using MPU9250, uncomment calibrateMagnetometer() in void setup() to get these values, else just ignore these
-float MagErrorX = 0.0;
-float MagErrorY = 0.0; 
-float MagErrorZ = 0.0;
-float MagScaleX = 1.0;
-float MagScaleY = 1.0;
-float MagScaleZ = 1.0;
+float MagErrorX = 0.00;
+float MagErrorY = 0.00; 
+float MagErrorZ = 0.00;
+float MagScaleX = 1.00;
+float MagScaleY = 1.00;
+float MagScaleZ = 1.00;
 
 //IMU calibration parameters - calibrate IMU using calculate_IMU_error() in the void setup() to get these values, then comment out calculate_IMU_error()
-float AccErrorX = 0.0;
-float AccErrorY = 0.0;
-float AccErrorZ = 0.0;
-float GyroErrorX = 0.0;
-float GyroErrorY= 0.0;
-float GyroErrorZ = 0.0;
+float AccErrorX = 0.05;
+float AccErrorY = 0.01;
+float AccErrorZ = 0.11;
+float GyroErrorX = 3.34;
+float GyroErrorY= -0.78;
+float GyroErrorZ = -1.10;
 
 //Controller parameters (take note of defaults before modifying!): 
 float i_limit = 25.0;     //Integrator saturation level, mostly for safety (default 25.0)
@@ -347,7 +347,7 @@ void setup() {
   delay(5);
 
   //Get IMU error to zero accelerometer and gyro readings, assuming vehicle is level when powered up
-  calculate_IMU_error(); //Calibration parameters printed to serial monitor. Paste these in the user specified variables section, then comment this out forever.
+  //calculate_IMU_error(); //Calibration parameters printed to serial monitor. Paste these in the user specified variables section, then comment this out forever.
 
   //Arm servo channels
   servo1.write(0); //Command servo angle from 0-180 degrees (1000 to 2000 PWM)
@@ -376,7 +376,7 @@ void setup() {
   setupBlink(3,160,70); //numBlinks, upTime (ms), downTime (ms)
 
   //If using MPU9250 IMU, uncomment for one-time magnetometer calibration (may need to repeat for new locations)
-  calibrateMagnetometer(); //Generates magentometer error and scale factors to be pasted in user-specified variables section
+  //calibrateMagnetometer(); //Generates magentometer error and scale factors to be pasted in user-specified variables section
 
 }
 
