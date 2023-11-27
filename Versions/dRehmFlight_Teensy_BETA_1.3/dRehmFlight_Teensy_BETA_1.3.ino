@@ -160,20 +160,20 @@ float B_gyro = 0.17;       //Gyro LP filter paramter, (MPU6050 default: 0.1. MPU
 float B_mag = 1.0;        //Magnetometer LP filter parameter
 
 //Magnetometer calibration parameters - if using MPU9250, uncomment calibrateMagnetometer() in void setup() to get these values, else just ignore these
-float MagErrorX = 0.00;
-float MagErrorY = 0.00; 
-float MagErrorZ = 0.00;
-float MagScaleX = 1.00;
-float MagScaleY = 1.00;
-float MagScaleZ = 1.00;
+float MagErrorX = 0.0;
+float MagErrorY = 0.0; 
+float MagErrorZ = 0.0;
+float MagScaleX = 1.0;
+float MagScaleY = 1.0;
+float MagScaleZ = 1.0;
 
 //IMU calibration parameters - calibrate IMU using calculate_IMU_error() in the void setup() to get these values, then comment out calculate_IMU_error()
-float AccErrorX = 0.05;
-float AccErrorY = 0.01;
-float AccErrorZ = 0.11;
-float GyroErrorX = 3.34;
-float GyroErrorY= -0.78;
-float GyroErrorZ = -1.10;
+float AccErrorX = 0.0;
+float AccErrorY = 0.0;
+float AccErrorZ = 0.1;
+float GyroErrorX = 0.0;
+float GyroErrorY= 0.0;
+float GyroErrorZ = 0.0;
 
 //Controller parameters (take note of defaults before modifying!): 
 float i_limit = 25.0;     //Integrator saturation level, mostly for safety (default 25.0)
