@@ -32,8 +32,8 @@ Everyone that sends me pictures and videos of your flying creations! -Nick
 
 //Uncomment only one receiver type
 //#define USE_PWM_RX
-//#define USE_PPM_RX
-#define USE_SBUS_RX
+#define USE_PPM_RX
+//#define USE_SBUS_RX
 //#define USE_DSM_RX
 static const uint8_t num_DSM_channels = 6; //If using DSM RX, change this to match the number of transmitter channels you have
 
