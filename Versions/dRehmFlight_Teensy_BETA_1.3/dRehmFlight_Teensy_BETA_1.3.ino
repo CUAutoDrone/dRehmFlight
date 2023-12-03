@@ -160,20 +160,20 @@ float B_gyro = 0.17;       //Gyro LP filter paramter, (MPU6050 default: 0.1. MPU
 float B_mag = 1.0;        //Magnetometer LP filter parameter
 
 //Magnetometer calibration parameters - if using MPU9250, uncomment calibrateMagnetometer() in void setup() to get these values, else just ignore these
-float MagErrorX = 0.0;
-float MagErrorY = 0.0; 
-float MagErrorZ = 0.0;
-float MagScaleX = 1.0;
-float MagScaleY = 1.0;
-float MagScaleZ = 1.0;
+float MagErrorX = 0.00;
+float MagErrorY = 0.00; 
+float MagErrorZ = 0.00;
+float MagScaleX = 1.00;
+float MagScaleY = 1.00;
+float MagScaleZ = 1.00;
 
 //IMU calibration parameters - calibrate IMU using calculate_IMU_error() in the void setup() to get these values, then comment out calculate_IMU_error()
-float AccErrorX = 0.0;
-float AccErrorY = 0.0;
-float AccErrorZ = 0.1;
-float GyroErrorX = 0.0;
-float GyroErrorY= 0.0;
-float GyroErrorZ = 0.0;
+float AccErrorX = -0.02;
+float AccErrorY = -0.00;
+float AccErrorZ = 0.05;
+float GyroErrorX = 1.20;
+float GyroErrorY= 2.63;
+float GyroErrorZ = 0.27;
 
 //Controller parameters (take note of defaults before modifying!): 
 float i_limit = 25.0;     //Integrator saturation level, mostly for safety (default 25.0)
@@ -560,7 +560,7 @@ void getIMUdata() {
   #elif defined USE_MPU9250_SPI
     mpu9250.getMotion9(&AcX, &AcY, &AcZ, &GyX, &GyY, &GyZ, &MgX, &MgY, &MgZ);
   #endif
-
+ 
  //Accelerometer
   AccX = AcX / ACCEL_SCALE_FACTOR; //G's
   AccY = AcY / ACCEL_SCALE_FACTOR;
